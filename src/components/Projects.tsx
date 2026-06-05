@@ -6,15 +6,22 @@ import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa";
 
 const mainProject = {
-  title: "UniPortal",
-  description: "A comprehensive scholarship & application portal developed for the NAMA Foundation. Features include real user management, production workflows, and automated email processing.",
-  tech: ["React (Vite)", "Supabase", "Resend API", "Tailwind CSS"],
-  image: "/uniportal.jpg", // Placeholder
-  github: "https://github.com/tanvironb/NAMA_uniPortal/tree/master",
-  live: "https://uni-scholarship.namafoundation.org/",
+  title: "NAMA Event App",
+  description: "A comprehensive event management and attendee engagement mobile application featuring agenda schedules, peer networking, QR-based check-ins, push notifications, and gamified leaderboards.",
+  tech: ["Flutter", "Riverpod", "Firebase"],
+  image: "/nama_event.png",
+  github: "https://github.com/tanvironb/NAMA_Event",
+  live: "",
 };
 
 const otherProjects = [
+  {
+    title: "UniPortal",
+    description: "A comprehensive scholarship & application portal developed for the NAMA Foundation. Features include real user management, production workflows, and automated email processing.",
+    tech: ["React (Vite)", "Supabase", "Resend API", "Tailwind CSS"],
+    github: "https://github.com/tanvironb/NAMA_uniPortal/tree/master",
+    Website: "https://uni-scholarship.namafoundation.org/",
+  },
   {
     title: "KitaID Mobile App",
     description: "A secure digital identity mobile application designed to streamline user verification and digital access.",
@@ -37,7 +44,6 @@ const otherProjects = [
     title: "Ninja Samurai Game",
     description: "An engaging 2D action game featuring smooth animations, combat mechanics, and level progression.",
     tech: ["Game Engine", "C#"],
-
   },
 ];
 
@@ -88,13 +94,17 @@ export default function Projects() {
               ))}
             </div>
             <div className="flex items-center gap-4">
-              <a href={mainProject.github} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a href={mainProject.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium transition-all">
-                <span>Live Demo</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              {mainProject.github && (
+                <a href={mainProject.github} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              )}
+              {mainProject.live && (
+                <a href={mainProject.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium transition-all">
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
